@@ -359,10 +359,10 @@ def test():
     print(result)
 
 if __name__ == '__main__':
-#    train(0)
-#    train(1)
-#    train(2)
-#    train(3)
-#    train(4)
-#    test()
+    train(0)
+    train(1)
+    train(2)
+    train(3)
+    train(4)
+    test()
     print('test')

@@ -11,4 +11,4 @@ pyltp==0.2.1
 http://model.scir.yunfutech.com/model/ltp_data_v3.4.0.zip
 
 # run
-pyhton --gpu 'gpu_id' --ltp 'ltp model path'
+pyhton main.py --gpu 'gpu_id' --ltp 'ltp model path'
