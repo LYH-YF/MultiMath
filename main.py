@@ -1,6 +1,11 @@
 # coding: utf-8
 import os
 import time
+import argparse
+parser_=argparse.ArgumentParser()
+parser_.add_argument('--gpu',type=str,default='0')
+args=parser_.parse_args()
+os.environ['CUDA_VISIBLE_DEVICES']=args.gpu
 import torch.optim
 import torch.nn as nn
 
