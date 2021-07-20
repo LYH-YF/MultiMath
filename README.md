@@ -5,11 +5,13 @@ Our paper: https://www.aclweb.org/anthology/2020.coling-main.262.pdf
 
 # environment
 python==3.6
+
 pyltp==0.2.1
 
 # download ltp model
 http://model.scir.yunfutech.com/model/ltp_data_v3.4.0.zip
 
 # run
-pyhton main.py --run_name preprocess
-pyhton main.py --run_name train  --gpu 'gpu_id' --ltp 'ltp model path'
+python main.py --run_name preprocess
+
+python main.py --run_name train  --gpu 'gpu_id' --ltp 'ltp model path'
