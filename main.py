@@ -5,6 +5,7 @@ import argparse
 parser_=argparse.ArgumentParser()
 parser_.add_argument('--gpu',type=str,default='0')
 parser_.add_argument('--ltp',type=str,default='ltp_data_v3.4.0')
+parser_.add_argument('--run_name',type=str,required=True,choices=['train','test','preprocess'])
 args=parser_.parse_args()
 os.environ['CUDA_VISIBLE_DEVICES']=args.gpu
 import torch.optim
@@ -359,10 +360,15 @@ def test():
     print(result)
 
 if __name__ == '__main__':
-    train(0)
-    train(1)
-    train(2)
-    train(3)
-    train(4)
-    test()
-    print('test')
+    if args.run_name=='preprocess':
+        generate_train_test()
+    elif args.run_name=='test':
+        test()
+    else:
+        train(0)
+        train(1)
+        train(2)
+        train(3)
+        train(4)
+        test()
+        print('test')
