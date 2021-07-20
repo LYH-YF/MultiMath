@@ -4,6 +4,7 @@ import time
 import argparse
 parser_=argparse.ArgumentParser()
 parser_.add_argument('--gpu',type=str,default='0')
+parser_.add_argument('--ltp',type=str,default='ltp_data_v3.4.0')
 args=parser_.parse_args()
 os.environ['CUDA_VISIBLE_DEVICES']=args.gpu
 import torch.optim
@@ -26,6 +27,7 @@ hop_size = 2
 
 from pyltp import Postagger,Parser
 LTP_DATA_DIR="../ltp_data_v3.4.0"
+LTP_DATA_DIR=args.ltp
 pos_model_path = os.path.join(LTP_DATA_DIR, "pos.model")
 par_model_path = os.path.join(LTP_DATA_DIR, 'parser.model')
 postagger = Postagger()
