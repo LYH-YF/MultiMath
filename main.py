@@ -38,12 +38,12 @@ parser.load(par_model_path)
 
 
 def read_data_json(filename):
-    with open(filename, 'r') as f:
+    with open(filename, 'r',encoding='utf-8') as f:
         return json.load(f)
 
 def write_data_json(data, filename):
-    with open(filename, 'w') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+    with open(filename, 'w',encoding='utf-8') as f:
+        json.dump(data, f, indent=4)
 
 def generate_train_test():
     data = load_raw_data("data/Math_23K.json")
